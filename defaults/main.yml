@@ -35,13 +35,11 @@ kubernetes_yum_arch: x86_64
 
 kubernetes_pod_network_cni: 'calico'
 kubernetes_pod_network_cidr: '10.144.0.0/16'
+kubernetes_pod_network_manifest_files:
+  - https://docs.projectcalico.org/v3.7/manifests/calico.yaml
 
 #kubernetes_pod_network_cni: 'flannel'
 #kubernetes_pod_network_cidr: '10.244.0.0/16'
-
-# Flannel config files.
-kubernetes_flannel_manifest_file_rbac: https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
-kubernetes_flannel_manifest_file: https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-
-# Calico config files
-kubernetes_calico_manifest_file: https://docs.projectcalico.org/v3.7/manifests/calico.yaml
+#kubernetes_pod_network_manifest_files:
+#  - https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+#  - https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml

@@ -1,0 +1,7 @@
+---
+
+- name: Configure Calico networking.
+  command: "kubectl apply -f {{ item }}"
+  with_items: kubernetes_pod_network_manifest_files
+  register: calico_result
+  changed_when: "'created' in calico_result.stdout"
