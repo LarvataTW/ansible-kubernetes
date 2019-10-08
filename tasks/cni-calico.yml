@@ -16,8 +16,8 @@
 - name: Replace the CIDR settings.
   replace:
     path: "/tmp/{{ kubernetes_pod_network_cni }}/{{ item | basename }}"
-    regexp: '(\s+)192\.168\.0\.0\/16(\s+.*)?$'
-    replace: '\1{{ kubernetes_pod_network_cidr | regex_escape() }}\2'
+    regexp: '192\.168\.0\.0\/16'
+    replace: '{{ kubernetes_pod_network_cidr }}'
     backup: yes
   with_items: "{{ kubernetes_pod_network_manifest_files }}"
 
