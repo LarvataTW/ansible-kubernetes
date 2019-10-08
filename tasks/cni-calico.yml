@@ -11,7 +11,7 @@
     url: "{{ item }}"
     dest: "/tmp/{{ kubernetes_pod_network_cni }}/{{ item | basename }}"
     mode: '0644'
-  with_items: kubernetes_pod_network_manifest_files
+  with_items: "{{ kubernetes_pod_network_manifest_files }}"
 
 - name: Replace the CIDR settings.
   replace:
@@ -19,7 +19,7 @@
     regexp: '(\s+){{ "192.168.0.0/16" | regex_escape() }}(\s+.*)?$'
     replace: '\1{{ kubernetes_pod_network_cidr }}\2'
     backup: yes
-  with_items: kubernetes_pod_network_manifest_files
+  with_items: "{{ kubernetes_pod_network_manifest_files }}"
 
 - name: List manifest files.
   find:
