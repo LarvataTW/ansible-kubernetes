@@ -73,7 +73,7 @@ Yum repository options for Kubernetes installation.
     kubernetes_pod_network_manifest_files:
       - https://docs.projectcalico.org/v3.7/manifests/calico.yaml
 
-Calico manifest files to apply to the Kubernetes cluster to enable networking. 
+Calico manifest files to apply to the Kubernetes cluster to enable networking.
 
     kubernetes_pod_network_cni: 'flannel'
     kubernetes_pod_network_cidr: '10.244.0.0/16'
@@ -81,7 +81,7 @@ Calico manifest files to apply to the Kubernetes cluster to enable networking.
       - https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
       - https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
-Flannel manifest files to apply to the Kubernetes cluster to enable networking. 
+Flannel manifest files to apply to the Kubernetes cluster to enable networking.
 You can copy your own files to your server and apply them instead, if you need to customize the Flannel networking configuration.
 
 ## Dependencies
